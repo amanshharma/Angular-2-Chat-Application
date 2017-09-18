@@ -1,0 +1,59 @@
+<h3>Chat Application</h3>
+<div class="main-wrapper">
+	<div class="wrapper" *ngIf="loginPage">
+		<h4>Login Page</h4>
+		
+		<hr>
+		<div class="form-group">
+			<label>Username</label>
+			<input type="text" name="username" class="form-control" placeholder="Enter your Email" [(ngModel)]="username" value="{{username}}">
+		</div>
+
+		<div class="form-group">
+			<label>Password</label>
+			<input type="password" name="password" class="form-control" placeholder="Enter your Password" [(ngModel)]="password" value="{{ password }}">
+		</div>
+
+		<div class="form-group">
+			<button class="btn submit-btn" (click)="login()">Login</button>
+		</div>
+		<a (click)="registerActivate()">Register</a>
+	</div>
+
+
+
+
+
+
+
+	<div class="wrapper" *ngIf="registerPage">
+			<h4>Registration Page</h4>
+			<hr>
+		<div class="form-group">
+			<label>Name</label>
+			<input type="text" name="name" class="form-control" placeholder="Enter your Name" [(ngModel)]="username" value="{{username}}"
+			 (keyup)="onkeyup($event)" (keydown)="onkeydown($event)">
+			<br *ngIf="isuserNameAvailable && username!=''" />
+			<div *ngIf="isuserNameAvailable && username!=''" class="alert alert-danger">
+				username <strong>{{username}}</strong> is already taken.
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label>Email</label>
+			<input type="text" name="email" class="form-control" placeholder="Enter your Email" [(ngModel)]="email" value="{{email}}">
+		</div>
+
+		<div class="form-group">
+			<label>Password</label>
+			<input type="password" name="password" class="form-control" placeholder="Enter your Password" [(ngModel)]="password" value="{{ password }}">
+		</div>
+
+		<div class="form-group">
+			<button class="btn submit-btn" (click)="registerUser()">Submit</button>
+		</div>
+		<a (click)="loginActivate()">Login</a>
+		
+	</div>
+
+</div>

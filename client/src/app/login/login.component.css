@@ -1,0 +1,21 @@
+.main-wrapper{
+	display: flex;
+	justify-content: center;
+	padding-top: 7%;
+	color: purple;
+}
+
+.wrapper{
+	width: 30%;
+}
+
+h3{
+    color: purple;
+	text-align: center;
+	
+}
+
+h4{
+	color: purple;
+	font-weight: bold
+}

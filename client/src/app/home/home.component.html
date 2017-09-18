@@ -1,0 +1,62 @@
+<div [class.overlay-display]="overlayDisplay" class="overlay">
+	<h1>Loading</h1>
+</div>
+
+
+<div class="main-wrapper">
+	<div class="row home-header">
+		<h3 class="col-md-10 col-sm-10 col-xs-10">Chat Application</h3>
+		<button class="btn btn-info col-md-2 col-sm-2 col-xs-2" (click)="logout()">Logout</button>
+	</div>
+	<br>
+	<div class="home">
+			
+		<div class="row">
+			<div class="col-md-8 col-sm-8 col-xs-8">
+					
+							<h4 class="">Welcome {{username}}</h4>
+							
+						
+				<div *ngIf="selectedUserName" class="opposite-user">
+					Chatting with {{selectedUserName}}
+				</div>
+
+				<ul class="message-thread">
+					<li *ngFor="let message of messages" [class.align-right]="alignMessage(message.toUserId)">
+						{{ message.message}}
+					</li>
+				</ul>
+
+				<div class="message-typer">
+					<textarea class="message form-control" placeholder="Type your message and hit Enter" [(ngModel)]="message" (keyup)="sendMessage($event)"></textarea>
+				</div>
+
+			</div>
+
+			<div class="col-md-4 col-sm-4 col-xs-4">
+					<h4>Online Users</h4>
+				<ul class="row user-list">
+						
+					<li *ngFor="let user of chatListUsers" (click)="selectedUser(user)" [class.selected-user]="isUserSelected(user._id)">
+						{{ user.username}}
+
+					</li>
+				</ul>
+
+				<h4>Notifications</h4>
+				<ul class="row user-list-notification
+					">
+					
+					<li *ngFor="let user of newmsgnotification">
+						A new message from {{ user}}
+
+					</li>
+				</ul>
+
+
+
+			</div>
+		</div>
+	</div>
+
+</div>
