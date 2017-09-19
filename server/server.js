@@ -10,7 +10,6 @@ const socketEvents = require('./utils/socket');
 const routes = require('./utils/routes'); 
 const config = require('./utils/config'); 
 
-
 class Server{
 
     constructor(){
