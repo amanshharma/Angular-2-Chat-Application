@@ -1,9 +1,3 @@
-/*
-* Real time private chatting app using Angular 2,Nodejs, mongodb and Socket.io
-* @author Shashank Tiwari
-*/
-
-
 import { Injectable } from '@angular/core';
 
 import { Subject } from 'rxjs/Subject';
