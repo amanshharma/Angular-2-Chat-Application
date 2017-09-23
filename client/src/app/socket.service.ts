@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 
-/*npm install @types/socket.io-client --save
-*/
 import * as io from 'socket.io-client';
 
 @Injectable()
